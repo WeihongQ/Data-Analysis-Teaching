@@ -46,8 +46,9 @@ ggplot(data=party_complete, mapping= aes(x=party_complete$Origin, y=party_comple
 
 plot(x=party$Origin, y=party$Year_in_Power, na.rm=TRUE)
 
-#use local dataset 
+#(3)use local dataset 
 earn <- read_dta("CountryOccupationEarnings.dta")
 
 ggplot(earn, aes(x=Taxes)) + geom_density()
+
 
