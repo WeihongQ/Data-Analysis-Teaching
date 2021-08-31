@@ -72,7 +72,7 @@ ggplot(earn, aes(x = Hours, y = EarningsNet) ) +
 #print summary statistics
 stargazer(earn)
 
-#print regression results
+#print regression results 
 coef.1 <- lm(EarningsNet ~ Hours, data= earn)
 summary(coef)
 
