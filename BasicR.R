@@ -74,7 +74,7 @@ stargazer(earn)
 
 #print regression results 
 coef.1 <- lm(EarningsNet ~ Hours, data= earn)
-summary(coef)
+summary(coef.1)
 
 coef.2<- lm(EarningsNet ~ Hours + Population, data= earn)
 stargazer(coef.1, coef.2, title="Results", align=TRUE)
