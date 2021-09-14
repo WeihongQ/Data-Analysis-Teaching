@@ -17,13 +17,13 @@ library(datasets)
 add <- function(x,y){
   x+y
 }
-add(3,7)
+add(11,7)
 
 #you can generate a function with conditions
 cond <- function(x){
   w <- x<0
-  w
-  #x-w
+  #w
+  x-w
   #x[w]
 }
 
@@ -65,7 +65,7 @@ cmean(new, removeNA = TRUE)
 v1 <- c(1,2,3)
 v2 <- c(10,11,12,13)
 
-r<- array(c(v1,v2),dim = c(3,4,2)) #create an array with 2 matrix, each has 3 rows and 3 columns
+r<- array(c(v1,v2),dim = c(3,4,2)) #create an array with 2 matrix, each has 3 rows and 4 columns
 
 #name columns (usually the variable name), rows and matrix
 rname <- c("row1", "row2", "row3")
@@ -73,6 +73,16 @@ cname <- c("column1", "column2", "column3", "column4")
 mxname <- c("matrix1", "matrix2")
 
 r<- array(c(v1,v2),dim = c(3,4,2), dimnames = list(rname,cname,mxname))
+
+
+str(ls)
+
+e <- rnorm(100, 5, 10)
+str(e)
+summary(e)
+
+str(airquality)
+
 
 str(apply)
 #MARGIN is the integer identifies which dimension is retained
@@ -83,7 +93,7 @@ set.seed(123)
 x <- matrix(rnorm(100), 10,10)
 apply(x,2,quantile)
 
-#the lapply function loops along a list and retirn a list as the same length X
+#the lapply function loops along a list and return a list as the same length X
 #each of the element is the result of applying specified function
 str(lapply)
 lapply(x,mean)
@@ -115,4 +125,15 @@ summary(iris)
 
 tapply(iris$Sepal.Length, iris$Species, mean)
 
+#optimization functions
+str(optim)
+
+obj <- function(q){
+  q1 <- q[1]
+  q2 <- q[2]
+  y <- 100*(q2-q1^2)^2+(1-q1)^2
+  y
+}
+
+optim(par = c(0,3), fn=obj)
 
