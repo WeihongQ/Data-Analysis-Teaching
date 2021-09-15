@@ -138,4 +138,4 @@ obj <- function(q){
 optim(par = c(0,3), fn=obj)
 
 #refer ?optim for the reported variables and values in the results
-#revised after recitation on Sep 15
+
