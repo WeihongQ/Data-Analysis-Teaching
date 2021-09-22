@@ -56,13 +56,14 @@ population <- sample(c("under18", "18to65", "over65"), size = 10000,
 covid <- rep(NA, 10000)
 
 for(i in 1:10000){
-  if(population[i]=="unnder18"){
+  if(population[i]=="under18"){
     covid[i] <- rbinom(1,1,0.12)}
     else if(population[i]=="18to65"){
         covid[i] <- rbinom(1,1,0.05)}
-    else if(population=="over65"){
+    else if(population[i]=="over65"){
         covid[i] <- rbinom(1,1,0.15)}
 }
+
 summary(covid)
 sum(covid)
 
@@ -80,7 +81,7 @@ gss[samp, 9:12]
 x <- rnorm(1000)
 e<-  rnorm(1000,0,5)
 
-y = 0.5 + 3*x +e
+y = 0.5 - 3*x +e
 summary(y)
 plot(x,y)
 abline(lm(y ~x), col="red")
