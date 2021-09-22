@@ -23,9 +23,9 @@ set.seed(101)
 
 sim<- rnorm(100)
 sim<- rnorm(1000,5,2)
-sim.d<- dnorm(0.5)
-sim.p <- pnorm(0.7)
-sim.q <- qnorm(0.75)
+sim.d<- dnorm(0.5) #the density where cdf is .5
+sim.p <- pnorm(0.7) #cdf value where the value is 0.7
+sim.q <- qnorm(0.6) #the value where quantile is 0.6
 
 mean(sim)
 
